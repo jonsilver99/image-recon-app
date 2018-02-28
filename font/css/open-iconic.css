@@ -1,8 +1,12 @@
 
 @font-face {
   font-family: 'Icons';
-  src: url('../fonts/open-iconic.eot');
-  src: url('../fonts/open-iconic.eot?#iconic-sm') format('embedded-opentype'), url('../fonts/open-iconic.woff') format('woff'), url('../fonts/open-iconic.ttf') format('truetype'), url('../fonts/open-iconic.otf') format('opentype'), url('../fonts/open-iconic.svg#iconic-sm') format('svg');
+  src: url('https://image-recon-app.herokuapp.com/app/font/fonts/open-iconic.eot');
+  src: url('https://image-recon-app.herokuapp.com/app/font/fonts/open-iconic.eot?#iconic-sm') format('embedded-opentype'),
+    url('https://image-recon-app.herokuapp.com/app/font/fonts/open-iconic.woff') format('woff'),
+    url('https://image-recon-app.herokuapp.com/app/font/fonts/open-iconic.ttf') format('truetype'), 
+    url('https://image-recon-app.herokuapp.com/app/font/fonts/open-iconic.otf') format('opentype'),
+    url('https://image-recon-app.herokuapp.com/app/font/fonts/open-iconic.svg#iconic-sm') format('svg');
   font-weight: normal;
   font-style: normal;
 }
