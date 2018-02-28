@@ -1,0 +1,17 @@
+#logo{
+    text-shadow: -1px 1px black, -2px 1px white;
+    font-family: fantasy;
+    font-size: 2rem;
+}
+
+ul.navbar-nav{
+    width: 100% !important;
+}
+
+#login_li, #logout_li{
+    margin-left: auto;    
+}
+
+#login_li:hover, #logout_li:hover{
+    cursor: pointer;
+}

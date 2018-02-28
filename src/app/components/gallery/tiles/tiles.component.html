@@ -1,0 +1,16 @@
+<div>
+    <div class="flexRow cnt-padding-heavy justify-center">
+        <div appHighlight class="pic-card" *ngFor="let picName of showingPics, let i = index">
+            <app-picture [ImgName]="picName"></app-picture>
+            <span appLikeHeart id='{{picName}}' class="like-heart oi" data-glyph="heart"></span>
+        </div>
+    </div>
+    <section id="bottomSpace">
+        <div *ngIf="showLoadingIndicator" id="loadingPicsIndicator">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <div class="bounce4"></div>
+        </div>
+    </section>
+</div>

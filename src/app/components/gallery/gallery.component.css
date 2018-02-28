@@ -1,0 +1,23 @@
+button{
+    padding: .5rem;
+}
+
+a {
+    display: flex;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #343a40;
+}
+
+a:hover{
+    color: dodgerblue;
+}
+
+li{
+    list-style: none;
+}
+
+.nav-link{
+    padding: 0 !important;
+}
+

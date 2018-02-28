@@ -1,0 +1,14 @@
+<div class="flexRow cnt-padding-heavy justify-center">
+    <div id="componentWrapper">
+        <section id="imgWrap">
+            <img class="" [src]="imagePath">
+            <span appLikeHeart id='{{imageName}}' class="like-heart oi" data-glyph="heart"></span>
+        </section>
+        <ul>
+            <li *ngFor="let tag of imageTags, let i = index">
+                <span class="oi" data-glyph="tags"></span>
+                <span>{{tag.name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

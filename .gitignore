@@ -40,3 +40,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# user add-ons
+/dev&prod - mode switch
+Personal_Notes.md
