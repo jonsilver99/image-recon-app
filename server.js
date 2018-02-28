@@ -4,6 +4,10 @@ const path = require('path');
 let PORT = process.env.PORT || 4200;
 
 // this might need to be changed to use the aws sdk to serve up images from there
+server.get('*', (req, res, next) => {
+    console.log(req.url);
+});
+
 server.use(express.static(path.join(__dirname + '/dist')));
 
 server.get('/*', (req, res, next) => {
