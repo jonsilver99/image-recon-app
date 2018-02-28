@@ -16,9 +16,8 @@ function sethead(req, res, next) {
     res.setHeader("Content-Type", 'font/opentype');
     next();
 }
-
 // server.get(/open-iconic/, sethead, express.static(__dirname + '/font/fonts'));
-
+server.get(/open-iconic/, sethead);
 server.use(express.static(__dirname + '/dist'));
 
 server.get('/*', (req, res, next) => {
