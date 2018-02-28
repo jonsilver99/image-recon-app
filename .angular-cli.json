@@ -21,7 +21,7 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../font/css/open-iconic.min.css"
+        "../font/css/open-iconic.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
