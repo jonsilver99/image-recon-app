@@ -1,5 +1,6 @@
 import { OnInit, Component } from '@angular/core';
 import { PictureService } from '../../../services/picture.service';
+import { EntryURL } from '../../../../environments/environment';
 
 @Component({
     selector: 'app-carousel',
@@ -9,6 +10,8 @@ import { PictureService } from '../../../services/picture.service';
 export class CarouselComponent implements OnInit {
 
     public PicNames: Array<string> = [];
+    public imagePath: string = `${EntryURL}/assets/uploads`;
+    
 
     constructor(public pictureService: PictureService) {
         this.pictureService.getAllPics().subscribe(

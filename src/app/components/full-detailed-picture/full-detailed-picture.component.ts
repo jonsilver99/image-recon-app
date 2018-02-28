@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PictureService } from '../../services/picture.service';
+import { EntryURL } from '../../../environments/environment';
 
 @Component({
     selector: 'app-full-detailed-picture',
@@ -9,7 +10,7 @@ import { PictureService } from '../../services/picture.service';
 })
 export class FullDetailedPictureComponent implements OnInit {
 
-    public imagePath: string = "http://localhost:4400/assets/uploads/";
+    public imagePath: string = `${EntryURL}/assets/uploads/`;
     public imageName: string = '';
     public imageTags: Array<any> = []
 

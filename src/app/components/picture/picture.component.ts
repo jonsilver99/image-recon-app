@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { EntryURL } from '../../../environments/environment';
 
 @Component({
     selector: 'app-picture',
@@ -15,7 +16,7 @@ export class PictureComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        this.ImgSrc = `http://localhost:4400/assets/uploads/${this.ImgName}`;
+        this.ImgSrc = `${EntryURL}/assets/uploads/${this.ImgName}`;
     }
 
 }
