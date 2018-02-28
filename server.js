@@ -12,11 +12,10 @@ server.use((req, res, next)=>{
     console.log(req.url);
     next();
 })
-server.use(staticRegexFont, path.join(__dirname + '/font'));
-server.use(staticRegexOpen, path.join(__dirname + '/font'));
+server.use(staticRegexFont, express.static(path.join(__dirname + '/font')));
+server.use(staticRegexOpen, express.static(path.join(__dirname + '/font')));
 server.use(express.static(path.join(__dirname + '/dist')));
-
-// server.use(express.static(path.join(__dirname + '/dist')));
+// server.use(express.static(__dirname + '/dist'));
 
 server.get('/*', (req, res, next) => {
     console.log(req.url);
