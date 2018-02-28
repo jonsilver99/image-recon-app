@@ -13,7 +13,7 @@ server.use((req, res, next) => {
 
 function sethead(req, res, next) {
     console.log('reached');
-    res.setHeader("Content-Type", 'text/css');
+    res.setHeader("Content-Type", 'font/opentype');
     next();
 }
 
