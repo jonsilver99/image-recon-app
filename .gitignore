@@ -43,4 +43,6 @@ Thumbs.db
 
 # user add-ons
 /dev&prod - mode switch
+/toDelete
+/dist
 Personal_Notes.md
