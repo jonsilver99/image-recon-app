@@ -4,11 +4,10 @@ const path = require('path');
 let PORT = process.env.PORT || 4200;
 
 // this might need to be changed to use the aws sdk to serve up images from there
-let staticRegexFont = new RegExp(/^\/font.*$/);
-let staticRegexOpen = new RegExp(/^\/open-iconic.*$/);
+let staticRegexOpen = new RegExp(/^\/open-iconic*$/);
 
 server.use((req, res, next)=>{
-    console.log(req.url);
+    console.log(__dirname + '/font/fonts');
     console.log(`url: ${req.url}`);
     next();
 })
