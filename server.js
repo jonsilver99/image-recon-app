@@ -8,12 +8,11 @@ let staticRegexFont = new RegExp(/^\/font.*$/);
 let staticRegexOpen = new RegExp(/^\/open-iconic.*$/);
 
 server.use((req, res, next)=>{
-    console.log(req);
     console.log(req.url);
     next();
 })
 server.use(staticRegexFont, express.static(path.join(__dirname + '/font')));
-server.use(staticRegexOpen, express.static(path.join(__dirname + '/font')));
+server.use(staticRegexOpen, express.static(path.join(__dirname + '/font/fonts')));
 server.use(express.static(path.join(__dirname + '/dist')));
 // server.use(express.static(__dirname + '/dist'));
 
