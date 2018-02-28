@@ -24,7 +24,6 @@ export class TilesComponent implements OnInit {
                 break;
             }
             this.showingPics.push(this.PicNames[i]);
-            // console.log(this.showingPics);
         }
     }
 
@@ -35,7 +34,6 @@ export class TilesComponent implements OnInit {
                 for (let i = 0; i < 12; i++) {
                     this.showingPics.push(Names[i]);
                 }
-                // console.log(this.showingPics);
             },
             (err) => {
                 console.log(err);

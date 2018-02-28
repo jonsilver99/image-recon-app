@@ -14,9 +14,9 @@ export class ScrollEventsService {
         let div = scrolledElRef.nativeElement;
         return Observable.fromEvent(scrolledElRef.nativeElement, "scroll")
             .map((event) => {
-                console.log(`Content Scroll height: ${div.scrollHeight}`)
-                console.log(`Div height: ${div.clientHeight}`)
-                console.log(`Scroll position from top : ${div.scrollTop}`)
+                // console.log(`Content Scroll height: ${div.scrollHeight}`)
+                // console.log(`Div height: ${div.clientHeight}`)
+                // console.log(`Scroll position from top : ${div.scrollTop}`)
                 return scrolledElRef.nativeElement.scrollTop;
             })
             .filter((scrollTopValue) => {

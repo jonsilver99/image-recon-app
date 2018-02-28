@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
         this.initForm();
         this.route.queryParams.subscribe((quryPrms) => {
             if (quryPrms && quryPrms.username) {
-                console.log(quryPrms);
+                // console.log(quryPrms);
                 this.LoginForm.patchValue({ 'uname': quryPrms.username })
             }
         });
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
-        console.log(this.LoginForm);
+        // console.log(this.LoginForm);
         if (this.LoginForm.valid) {
             let userData = {
                 username: this.LoginForm.get('uname').value,
