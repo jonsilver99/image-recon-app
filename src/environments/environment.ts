@@ -7,14 +7,18 @@ export const environment = {
     production: false
 };
 
-export const URLS = {
-    EntryURL: "http://localhost:4400",
-    GetPicURL: `${this.EntryURL}/files/getAllPics`,
-    UploadPic: `${this.EntryURL}/files/upload`,
-    ReconPic: `${this.EntryURL}/files/recon`
-}
+// export const URLS = {
+//     EntryURL: "http://localhost:4400",
+//     GetPicURL: `${this.EntryURL}/files/getAllPics`,
+//     UploadPic: `${this.EntryURL}/files/upload`,
+//     ReconPic: `${this.EntryURL}/files/recon`
+// }
 
-export const EntryURL = "http://localhost:4400";
+//  Production:
+export const EntryURL = "https://image-recon-server.herokuapp.com";
+// Development:  
+// export const EntryURL = "export const EntryURL = "http://localhost:4400";
+
 export const RegisterURL = `${EntryURL}/register`;
 export const LoginURL = `${EntryURL}/login`;
 export const VerifyAuthURL = `${EntryURL}/api`;
