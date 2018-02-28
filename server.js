@@ -11,11 +11,13 @@ server.use((req, res, next) => {
     next();
 })
 
-// function sethead(req, res, next) {
-//     res.set()
-// }
+function sethead(req, res, next) {
+    console.log('reached');
+    res.setHeader("Content-Type", 'text/css');
+    next();
+}
 
-server.get(/open-iconic/, express.static(__dirname + '/font/fonts'));
+server.get(/open-iconic/, sethead, express.static(__dirname + '/font/fonts'));
 
 server.use(express.static(__dirname + '/dist'));
 
