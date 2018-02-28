@@ -7,34 +7,16 @@ let PORT = process.env.PORT || 4200;
 let staticRegexOpen = new RegExp(/^\/open-iconic*$/);
 
 server.use((req, res, next)=>{
-    console.log(`url: ${req.url}`);
+    console.log(`requested url: ${req.url}`);
     next();
 })
-server.use(/open-iconic/, (req, res, next)=>{
-    console.log(' use reached!!!');
-    next();
-    
-});
 
 server.get(/open-iconic/, (req, res, next)=>{
-    console.log('get reached!!!');
-    console.log('my asssss!!!');
+    console.log(req.url);
+    console.log(path.join(__dirname + '/font/fonts/index.open-iconic.eot'));
+    res.sendFile(path.join(__dirname + '/font/fonts/index.open-iconic.eot'));
     next();
-    
 });
-
-server.get(/font/, (req, res, next)=>{
-    console.log('get reached!!!');
-    next();
-    
-});
-
-server.get(/fonts/, (req, res, next)=>{
-    console.log('get reached!!!');
-    next();
-    
-});
-
 
 server.use(express.static(__dirname + '/dist'));
 
