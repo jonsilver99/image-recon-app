@@ -13,7 +13,7 @@ server.use((req, res, next) => {
 
 function sethead(req, res, next) {
     console.log('reached');
-    res.setHeader("Content-Type", 'font/opentype');
+    res.setHeader("Content-Type", 'embedded-opentype');
     next();
 }
 // server.get(/open-iconic/, sethead, express.static(__dirname + '/font/fonts'));
