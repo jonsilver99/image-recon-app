@@ -9,15 +9,15 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "postinstall": "ng build --aot -prod"        
+        "postinstall": "ng build --aot --target=production"
     },
     "private": true,
     "dependencies": {
-        "@angular/cli": "^1.6.8",
-        "@angular/compiler-cli": "^5.0.0",
         "@angular/animations": "^5.0.0",
+        "@angular/cli": "^1.7.0-beta.1",
         "@angular/common": "^5.0.0",
         "@angular/compiler": "^5.0.0",
+        "@angular/compiler-cli": "^5.0.0",
         "@angular/core": "^5.0.0",
         "@angular/forms": "^5.0.0",
         "@angular/http": "^5.0.0",
@@ -26,10 +26,10 @@
         "@angular/router": "^5.0.0",
         "bootstrap": "^4.0.0",
         "core-js": "^2.4.1",
-        "express": "^4.16.2",        
+        "express": "^4.16.2",
         "rxjs": "^5.5.2",
-        "zone.js": "^0.8.14",
-        "typescript": "~2.4.2"
+        "typescript": "~2.4.2",
+        "zone.js": "^0.8.14"
     },
     "devDependencies": {
         "@angular/language-service": "^5.0.0",
@@ -49,8 +49,8 @@
         "ts-node": "~3.2.0",
         "tslint": "~5.7.0"
     },
-    "engines":{
-        "npm":"5.5.1",
-        "node":"8.9.3"
+    "engines": {
+        "npm": "5.5.1",
+        "node": "8.9.3"
     }
 }
