@@ -4,7 +4,12 @@ const path = require('path');
 let PORT = process.env.PORT || 4200;
 
 // this might need to be changed to use the aws sdk to serve up images from there
+let staticRegexFont = new RegExp(/^\/font.*$/);
+let staticRegexOpen = new RegExp(/^\/open-iconic.*$/);
 
+
+server.use(staticRegexFont, path.join(__dirname + '/font'));
+server.use(staticRegexOpen, path.join(__dirname + '/font'));
 server.use(express.static(path.join(__dirname + '/dist')));
 
 // server.use(express.static(path.join(__dirname + '/dist')));
