@@ -18,6 +18,7 @@ server.use(/open-iconic/, (req, res, next)=>{
 
 server.get(/open-iconic/, (req, res, next)=>{
     console.log('get reached!!!');
+    console.log('my asssss!!!');
     next();
     
 });
