@@ -17,7 +17,7 @@ function sethead(req, res, next) {
     next();
 }
 // server.get(/open-iconic/, sethead, express.static(__dirname + '/font/fonts'));
-server.get(/open-iconic/, sethead);
+// server.get(/open-iconic/, sethead);
 server.use(express.static(__dirname + '/dist'));
 
 server.get('/*', (req, res, next) => {
