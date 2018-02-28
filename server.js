@@ -7,9 +7,11 @@ let PORT = process.env.PORT || 4200;
 server.use(express.static(__dirname + '/dist'));
 
 server.get('/*', (req, res, next) => {
-    res.sendfile(path.join(__dirname + __dirname + '/dist/index.html'));
+    res.sendfile(path.join(__dirname + '/dist/index.html'));
 });
 
 server.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 })
+
+console.log(__dirname)
