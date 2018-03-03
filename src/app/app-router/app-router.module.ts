@@ -1,8 +1,6 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, Component, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
-import { RouteGuardService } from '../services/route-guard.service';
 
 import { LoginComponent } from '../components/login/login.component';
 import { RegistrationComponent } from '../components/registration/registration.component';
@@ -13,6 +11,7 @@ import { UploadComponent } from '../components/upload/upload.component';
 import { CarouselComponent } from '../components/gallery/carousel/carousel.component';
 import { TilesComponent } from '../components/gallery/tiles/tiles.component';
 
+import { RouteGuardService } from '../services/route-guard.service';
 
 const appRoutes: Routes = [
     { path: 'Login', component: LoginComponent, canActivate: [RouteGuardService] },
@@ -22,18 +21,21 @@ const appRoutes: Routes = [
             { path: 'Tiles', component: TilesComponent },
             { path: 'Carousel', component: CarouselComponent },
             { path: '', redirectTo: 'Tiles', pathMatch: 'full' },
+            { path: '**', redirectTo: 'Tiles', pathMatch: 'full' }
         ]
     },
     { path: 'Upload', component: UploadComponent, canActivate: [RouteGuardService] },
-    { path: 'FullPic/:name', component: FullDetailedPictureComponent, canActivate: [RouteGuardService] },
-    { path: '', redirectTo: '/Login', pathMatch: 'full' },
-    { path: '**', redirectTo: '/Login', pathMatch: 'full' },
-]
+    { path: 'FullPic/:name/:url', component: FullDetailedPictureComponent, canActivate: [RouteGuardService] },
+    { path: '', redirectTo: 'Login', pathMatch: 'full' },
+    { path: '**', redirectTo: 'Login', pathMatch: 'full' },
+];
+
 const appRouter: ModuleWithProviders = RouterModule.forRoot(appRoutes);
 
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
         appRouter
     ],
     declarations: []

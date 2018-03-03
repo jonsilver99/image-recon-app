@@ -58,7 +58,7 @@ export class LoginService {
     }
 
     // Used in conjuction with canActivate - to verify client routes access permission
-    verifyAuth(clientRoute: string) {
+    verifyAuth(clientRoute: string): Observable<any> {
         const header = new HttpHeaders({ 'authorization': this.authToken });
         const params = new HttpParams().set('clientRoute', clientRoute);
         return this.httpReqs.get(VerifyAuthURL, { headers: header, params: params, responseType: 'text' })

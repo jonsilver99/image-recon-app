@@ -10,7 +10,7 @@ export const environment = {
 //  Production:
 export const EntryURL = "https://image-recon-server.herokuapp.com";
 // Development:  
-// export const EntryURL = "export const EntryURL = "http://localhost:4400";
+// export const EntryURL = "http://localhost:4400";
 
 export const RegisterURL = `${EntryURL}/register`;
 export const LoginURL = `${EntryURL}/login`;

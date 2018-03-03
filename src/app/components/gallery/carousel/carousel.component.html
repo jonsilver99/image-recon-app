@@ -1,8 +1,8 @@
 <h1>3d Carousel</h1>
 <div class="container">
     <div id="carousel">
-        <figure *ngFor="let picName of PicNames, let i = index">
-            <img src="{{imagePath}}/{{picName}}" alt="">
+        <figure *ngFor="let pic of rollingPics, let i = index">
+            <img src="{{pic.signedURL}}" alt="">
         </figure>
     </div>
 </div>

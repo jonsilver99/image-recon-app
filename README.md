@@ -1,5 +1,6 @@
 # ImageReconClient
-    This is an Angular Image reconnaissance app with Clarifai's api. App Also features a jwt registration/login module and an image 'like' feature. Created using node, Angular and basic json files as data storage.
+    This is an Angular Image reconnaissance app with Clarifai's api. App Also features a jwt registration/login module, an image 'like' feature image upload option. Created using node, Angular and basic json files for data storage.
+    # 03/03/2018 - app now Integrates Amazon's S3 service to resolve, serve and upload/store static files (images)
 
     # hosted at : https://image-recon-app.herokuapp.com
 

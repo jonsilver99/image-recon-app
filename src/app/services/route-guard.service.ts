@@ -13,6 +13,7 @@ export class RouteGuardService implements CanActivate, CanActivateChild {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | boolean {
         // console.log(route);
+        debugger;
         let requestedRoute = route.routeConfig.path;
         // If app state is logged in - block access to 'login' and 'register' routes
         if (requestedRoute == 'Login' || requestedRoute == 'Register') {

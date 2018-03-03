@@ -1,2 +1,1 @@
-<img width="200px" height="200px"  [src]="ImgSrc" routerLink="/FullPic/{{ImgName}}"> 
-<!-- routerLink="/pictures/{{pic}}" alt=""> -->
+<img width="200px" height="200px"  [src]="ImgData.signedURL" [routerLink]="['/FullPic/', ImgData.name, ImgData.signedURL]"> 

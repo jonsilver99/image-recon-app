@@ -5,25 +5,26 @@ import { ReconPicURL, GetPicURL, LikPicURL } from '../../environments/environmen
 import 'rxjs/Rx';
 import { LoginService } from './login.service';
 import { Subject } from 'rxjs/Subject';
+import { PictureData } from '../models/interfaces';
 
 
 @Injectable()
 export class PictureService {
 
-    public PicNames: Array<string> = [];
+    public fetchedPics: Array<PictureData> = [];
 
     constructor(public http: HttpClient, public loginStatus: LoginService) { }
 
     getAllPics(): Observable<any> {
-        // If Service already holds the PicNames data (pictues have already been fetched from server) then return those pictures.
+        // If Service already holds the fetchedPics data (pictues have already been fetched from server) then return this data.
         // Otherwise fetch from server
-        if (this.PicNames.length > 0) {
-            return Observable.of(this.PicNames);
+        if (this.fetchedPics.length > 0) {
+            return Observable.of(this.fetchedPics);
         } else {
             return this.http.get(GetPicURL)
-                .map((Names: Array<string>) => {
-                    this.PicNames = Names;
-                    return this.PicNames;
+                .map((results: Array<PictureData>) => {
+                    this.fetchedPics = results;
+                    return this.fetchedPics;
                 })
                 .catch((err: HttpErrorResponse): Observable<any> => {
                     return Observable.throw(err)

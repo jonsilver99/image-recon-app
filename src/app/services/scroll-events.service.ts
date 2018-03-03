@@ -20,7 +20,6 @@ export class ScrollEventsService {
                 return scrolledElRef.nativeElement.scrollTop;
             })
             .filter((scrollTopValue) => {
-                debugger;
                 return Math.ceil(scrollTopValue) >= div.scrollHeight - div.clientHeight
             })
             // .distinct()

@@ -10,16 +10,17 @@ import { EntryURL } from '../../../environments/environment';
 })
 export class FullDetailedPictureComponent implements OnInit {
 
-    public imagePath: string = `${EntryURL}/assets/uploads/`;
     public imageName: string = '';
+    public imageURL: string = '';
     public imageTags: Array<any> = []
 
     constructor(private activeRoute: ActivatedRoute, public pictureService: PictureService) { }
 
     ngOnInit() {
         this.activeRoute.params.subscribe((params) => {
+            debugger;
             this.imageName = params.name;
-            this.imagePath += this.imageName;
+            this.imageURL = params.url;
 
             this.pictureService.reconImage(this.imageName).subscribe(
                 (tags) => {

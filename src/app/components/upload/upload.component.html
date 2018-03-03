@@ -1,2 +1,7 @@
+<div class="flexRow">
+    <div *ngFor="let url of previewURLs, let i=index">
+        <img src="{{url}}" alt="">
+    </div>
+</div>
 <input type="file" multiple #filesInput (change)="onFilesLoaded(filesInput)">
 <button (click)="uploadfiles()">Upload</button>

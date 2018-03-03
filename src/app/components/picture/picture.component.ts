@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EntryURL } from '../../../environments/environment';
+import { PictureData } from '../../models/interfaces';
 
 @Component({
     selector: 'app-picture',
@@ -9,14 +10,11 @@ import { EntryURL } from '../../../environments/environment';
 export class PictureComponent implements OnInit {
 
     @Input()
-    public ImgName: string;
-
-    public ImgSrc: string;
+    public ImgData: PictureData
 
     constructor() { }
 
     ngOnInit() {
-        this.ImgSrc = `${EntryURL}/assets/uploads/${this.ImgName}`;
     }
 
 }

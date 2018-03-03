@@ -42,8 +42,7 @@ testem.log
 Thumbs.db
 
 # user add-ons
-/dev&prod - mode switch
-/toDelete
-/dist
+/d_modes
 Personal_Notes.md
 package-lock.json
+/toDelete

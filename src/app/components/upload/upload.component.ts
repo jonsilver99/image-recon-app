@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from '../../services/upload.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -9,6 +11,7 @@ import { UploadService } from '../../services/upload.service';
 })
 export class UploadComponent implements OnInit {
 
+    public previewURLs: Array<any> = [];
     public uploadCandidates: FileList;
     constructor(public uploadService: UploadService) { }
 
@@ -17,12 +20,17 @@ export class UploadComponent implements OnInit {
 
     uploadfiles() {
         if (this.uploadCandidates) {
-            this.uploadService.uploadfiles(this.uploadCandidates)
-                .subscribe((res) => {
-                    alert(res);
+            Observable.fromPromise(this.uploadService.uploadfiles(this.uploadCandidates), )
+                .subscribe((res: any) => {
+                    alert(res)
+                    console.log(res);
                 },
                 (err) => {
-                    alert(err);
+                    alert('error occoured check console');
+                    console.log(err);
+                },
+                () => {
+                    console.log("Observing complete");
                 }
                 );
         } else {
@@ -34,5 +42,4 @@ export class UploadComponent implements OnInit {
         this.uploadCandidates = input.files;
         console.log(this.uploadCandidates);
     }
-
 }

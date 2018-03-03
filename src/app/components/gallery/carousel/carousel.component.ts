@@ -1,6 +1,7 @@
 import { OnInit, Component } from '@angular/core';
 import { PictureService } from '../../../services/picture.service';
 import { EntryURL } from '../../../../environments/environment';
+import { PictureData } from '../../../models/interfaces';
 
 @Component({
     selector: 'app-carousel',
@@ -9,17 +10,17 @@ import { EntryURL } from '../../../../environments/environment';
 })
 export class CarouselComponent implements OnInit {
 
-    public PicNames: Array<string> = [];
+    public rollingPics: Array<PictureData> = [];
     public imagePath: string = `${EntryURL}/assets/uploads`;
     
 
     constructor(public pictureService: PictureService) {
         this.pictureService.getAllPics().subscribe(
-            (Names: Array<string>) => {
-                for (let pic of Names) {
+            (fetchedPics: Array<PictureData>) => {
+                for (let pic of fetchedPics) {
                     let randomIndex = Math.floor(Math.random() * 9 + 1)
-                    this.PicNames.push(Names[randomIndex]);
-                    if (this.PicNames.length == 9) {
+                    this.rollingPics.push(fetchedPics[randomIndex]);
+                    if (this.rollingPics.length == 9) {
                         break;
                     }
                 }

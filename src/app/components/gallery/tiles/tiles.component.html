@@ -1,8 +1,8 @@
 <div>
     <div class="flexRow cnt-padding-heavy justify-center">
-        <div appHighlight class="pic-card" *ngFor="let picName of showingPics, let i = index">
-            <app-picture [ImgName]="picName"></app-picture>
-            <span appLikeHeart id='{{picName}}' class="like-heart oi" data-glyph="heart"></span>
+        <div appHighlight class="pic-card" *ngFor="let pic of showingPics, let i = index">
+            <app-picture [ImgData]="pic"></app-picture>
+            <span appLikeHeart id='{{pic.name}}' class="like-heart oi" data-glyph="heart"></span>
         </div>
     </div>
     <section id="bottomSpace">
