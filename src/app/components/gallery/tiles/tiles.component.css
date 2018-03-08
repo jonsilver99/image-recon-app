@@ -25,19 +25,21 @@ div.pic-card{
     bottom: .25rem;
     left: .75rem;
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-shadow: 0 0 4px black, 0 0 8px white;
     transition: font-size .25s, color .25s  linear;
 }
 
 .like-heart:hover{
+    font-size: 1.65rem;
     text-shadow: 0 0 4px rgb(184, 38, 38), 0 0 8px rgb(184, 38, 38);
     cursor: pointer;
+    transition: all .25s linear;
 }
 
 .like-heart-liked{
     color: red !important;
-    font-size: 1.75rem !important;
+    font-size: 2rem !important;
     transition: all .25s linear;
 }
 

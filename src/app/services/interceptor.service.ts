@@ -12,7 +12,8 @@ export class InterceptorService implements HttpInterceptor {
     constructor(public loginServ: LoginService, public router: Router) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> | any {
-        if (req.url != LoginURL && req.url != RegisterURL && req.url != VerifyAuthURL) {
+        debugger;
+        if (this.interceptionIsNeeded(req.url)) {
             req = req.clone({
                 setHeaders: {
                     authorization: this.loginServ.authToken
@@ -36,5 +37,17 @@ export class InterceptorService implements HttpInterceptor {
                     return Observable.throw(err);
                 }
             })
+    }
+
+    // this func will determine if to intercept the request, based on the req's url
+    interceptionIsNeeded(url: string) {
+        debugger;
+        if (url != LoginURL && url != RegisterURL && url != VerifyAuthURL && !url.includes("https://s3.eu-central-1.amazonaws.com")) {
+            // if req.url is none of the above - intercept
+            return true
+        } else {
+            // url is one of the above - do not intercept
+            return false
+        }
     }
 }

@@ -11,7 +11,7 @@ import { PictureData } from '../../../models/interfaces';
 export class CarouselComponent implements OnInit {
 
     public rollingPics: Array<PictureData> = [];
-    public imagePath: string = `${EntryURL}/assets/uploads`;
+    // public imagePath: string = `${EntryURL}/assets/uploads`;
     
 
     constructor(public pictureService: PictureService) {

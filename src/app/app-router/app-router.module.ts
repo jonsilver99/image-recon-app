@@ -10,6 +10,7 @@ import { FullDetailedPictureComponent } from '../components/full-detailed-pictur
 import { UploadComponent } from '../components/upload/upload.component';
 import { CarouselComponent } from '../components/gallery/carousel/carousel.component';
 import { TilesComponent } from '../components/gallery/tiles/tiles.component';
+import { AboutComponent } from '../components/about/about.component';
 
 import { RouteGuardService } from '../services/route-guard.service';
 
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     },
     { path: 'Upload', component: UploadComponent, canActivate: [RouteGuardService] },
     { path: 'FullPic/:name/:url', component: FullDetailedPictureComponent, canActivate: [RouteGuardService] },
+    { path: 'About', component: AboutComponent },
     { path: '', redirectTo: 'Login', pathMatch: 'full' },
     { path: '**', redirectTo: 'Login', pathMatch: 'full' },
 ];

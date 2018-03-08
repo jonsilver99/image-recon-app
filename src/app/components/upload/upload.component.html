@@ -1,7 +1,18 @@
-<div class="flexRow">
-    <div *ngFor="let url of previewURLs, let i=index">
-        <img src="{{url}}" alt="">
+<input type="file" multiple (change)="onFilesLoaded(filesInput)" #filesInput>
+<div class="flexRow cnt-padding-heavy justify-center">
+    <div id="controls">
+        <button (click)="selectFiles()" class="btn btn-info">Select Images</button>
+        <button (click)="uploadfiles()" [disabled]="pendingUpload.payloadSize > 5" [ngClass]="{'btn-danger' : pendingUpload.payloadSize > 5}"
+            class="btn btn-success">Upload
+        </button>
+    </div>
+    <div id="payloadInfo">
+        <span>Upload size: {{pendingUpload.payloadSize}} mb</span>
+        <span class="payloadWarning" *ngIf="pendingUpload.payloadSize > 5"> - Upload Size Exceeded (5mb is max)</span>
+    </div>
+    <div id="previewContainer" class="flexRow" #previewContainer>
+        <div class="prevBox" *ngFor="let url of pendingUpload.previewURLs, let i=index">
+            <img src="{{url}}" alt="">
+        </div>
     </div>
 </div>
-<input type="file" multiple #filesInput (change)="onFilesLoaded(filesInput)">
-<button (click)="uploadfiles()">Upload</button>

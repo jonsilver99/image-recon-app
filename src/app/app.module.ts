@@ -13,7 +13,6 @@ import { InterceptorService } from './services/interceptor.service';
 import { AppStateService } from './services/app-state.service';
 import { RegistrationService } from './services/registration.service';
 import { ScrollEventsService } from './services/scroll-events.service';
-import { AwsService } from './services/aws-service.service';
 
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -26,6 +25,7 @@ import { CarouselComponent } from './components/gallery/carousel/carousel.compon
 import { TilesComponent } from './components/gallery/tiles/tiles.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { LikeHeartDirective } from './directives/like-heart.directive';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
     declarations: [
@@ -39,7 +39,8 @@ import { LikeHeartDirective } from './directives/like-heart.directive';
         HighlightDirective,
         CarouselComponent,
         TilesComponent,
-        LikeHeartDirective
+        LikeHeartDirective,
+        AboutComponent
     
     ],
     imports: [
@@ -57,7 +58,6 @@ import { LikeHeartDirective } from './directives/like-heart.directive';
         RouteGuardService,
         AppStateService,
         ScrollEventsService,
-        AwsService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: InterceptorService,

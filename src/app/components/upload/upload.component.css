@@ -1,0 +1,35 @@
+#controls{
+    width: 100%;
+    /* padding: 1rem; */
+}
+
+#payloadInfo{
+    width: 100%;
+    padding: 1rem;
+}
+
+#previewContainer{
+    flex-wrap: wrap;
+    align-content: start;
+    justify-content: center;
+}
+
+.prevBox{
+    width: 16rem;
+    height: 14rem;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.payloadWarning{
+    font-weight: bold;
+    color: red;
+}
+
+input[type="file"]{
+    display: none;
+}
+

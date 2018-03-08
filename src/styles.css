@@ -8,7 +8,6 @@ html{
 }
 
 
-
 /***************
     Utils
 ***************/
@@ -59,11 +58,6 @@ html{
 .align-bottom{
     align-content: flex-end;
 }
-
-
-
-
-
 
 /* spacing */
 .marginize-sides{
@@ -138,9 +132,3 @@ li:not(.active):hover > a.nav-link{
     color: dodgerblue !important;
     cursor: pointer;
 }
-
-
-
-
-
-
