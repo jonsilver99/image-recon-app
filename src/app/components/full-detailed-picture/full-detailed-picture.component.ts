@@ -18,7 +18,6 @@ export class FullDetailedPictureComponent implements OnInit {
 
     ngOnInit() {
         this.activeRoute.params.subscribe((params) => {
-            debugger;
             this.imageName = params.name;
             this.imageURL = params.url;
 

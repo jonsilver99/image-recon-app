@@ -12,7 +12,6 @@ export class InterceptorService implements HttpInterceptor {
     constructor(public loginServ: LoginService, public router: Router) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> | any {
-        debugger;
         if (this.interceptionIsNeeded(req.url)) {
             req = req.clone({
                 setHeaders: {
@@ -23,25 +22,32 @@ export class InterceptorService implements HttpInterceptor {
 
         return next.handle(req)
             .map((returned: any) => {
-                // console.log("Incoming server response intercepted:");
-                // console.log(returned);
                 return returned;
             })
             .catch((err: HttpErrorResponse): Observable<any> => {
+                debugger;
+                if ('error' in err && typeof err.error == 'string') {
+                    alert(err.error);
+                }
+                if ('error' in err && 'invalidInput' in err.error) {
+                    let invalidInput = err.error.invalidInput;
+                    let errMsg = 'Invalid inputs:\n';
+                    for (let key in invalidInput) {
+                        errMsg += key + ' ' + invalidInput[key].join() + '\n';
+                    }
+                    alert(errMsg)
+                }
                 if (err.status == 401) {
                     this.router.navigate(['/Login']);
                     let errMsg = err.message + ' : ' + err.error
-                    return Observable.throw(errMsg);
+                    console.log(errMsg);
                 }
-                else {
-                    return Observable.throw(err);
-                }
+                return Observable.throw(err);
             })
     }
 
     // this func will determine if to intercept the request, based on the req's url
     interceptionIsNeeded(url: string) {
-        debugger;
         if (url != LoginURL && url != RegisterURL && url != VerifyAuthURL && !url.includes("https://s3.eu-central-1.amazonaws.com")) {
             // if req.url is none of the above - intercept
             return true

@@ -4,17 +4,17 @@
         <form [formGroup]="LoginForm" class="flexCol width40" (ngSubmit)="onSubmit()">
             <a class="formSwitcher" (click)="navigateToRegistrationForm($event)">New user? - Register here</a>
             <h3>Login</h3>
-            <div>
-                <label for="">User name</label>
-                <input type="text" name="uname" formControlName="uname">
+            <div class="flexRow inputfield">
+                <label class="flex1" for="">User name</label>
+                <input class="flex3" type="text" name="uname" formControlName="uname">
                 <span class="invalid-notice" *ngIf="!LoginForm.get('uname').valid && LoginForm.get('uname').touched">
                     This field is Required
                 </span>
             </div>
 
-            <div>
-                <label for="">Password</label>
-                <input type="password" name="pass" formControlName="pass">
+            <div class="flexRow inputfield">
+                <label class="flex1" for="">Password</label>
+                <input class="flex3" type="password" name="pass" formControlName="pass">
                 <span class="invalid-notice" *ngIf="!LoginForm.get('pass').valid && LoginForm.get('pass').touched">
                     This field is Required
                 </span>

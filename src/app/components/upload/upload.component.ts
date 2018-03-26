@@ -30,7 +30,6 @@ export class UploadComponent implements OnInit {
     }
 
     selectFiles() {
-        debugger;
         this.filesInput.nativeElement.click();
     }
 
